@@ -22,6 +22,12 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.6.0",
+    "@fortawesome/free-brands-svg-icons": "^6.6.0",
+    "@fortawesome/free-regular-svg-icons": "^6.6.0",
+    "@fortawesome/free-solid-svg-icons": "^6.6.0",
+    "@fortawesome/react-fontawesome": "^0.2.2",
+    "@headlessui/react": "^2.2.0",
     "@radix-ui/react-dialog": "^1.1.2",
     "@radix-ui/react-popover": "^1.1.2",
     "@radix-ui/react-slot": "^1.1.0",
@@ -44,6 +50,7 @@
     "@storybook/addon-essentials": "^8.4.2",
     "@storybook/addon-interactions": "^8.4.2",
     "@storybook/addon-onboarding": "^8.4.2",
+    "@storybook/addon-styling-webpack": "^1.0.1",
     "@storybook/blocks": "^8.4.2",
     "@storybook/react": "^8.4.2",
     "@storybook/react-vite": "^8.4.2",

@@ -6,8 +6,10 @@ import HomePage from "@/pages/index";
 import About from "@/pages/about";
 import Form from "@/pages/form";
 import User from "@/pages/user";
+import { useAppBootstrap } from "@/hooks/useAppBootstrap";
 
 const MyApp = () => {
+  useAppBootstrap();
   return (
     <RecoilRoot>
       <App>

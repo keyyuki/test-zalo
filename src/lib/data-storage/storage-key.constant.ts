@@ -1,5 +1,6 @@
 export const STORAGE_KEY = {
-  TOKEN: "token",
+  XTS_TOKEN: "token",
   DEVICEID: "deviceId",
   DOMAIN: "domain",
+  ZALO_SCOPE: "zaloScope",
 };

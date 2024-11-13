@@ -33,6 +33,7 @@
     "removeComments": true,
     "sourceMap": true,
     "resolveJsonModule": true,
+    "strictPropertyInitialization": false,
     "types": [
       "vite/client",
       "node"

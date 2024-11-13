@@ -1,6 +1,6 @@
-import { DataStorage } from "./data-storage.interface";
+import { IDataStorage } from "./data-storage.interface";
 
-export class MemoryStorage implements DataStorage {
+export class MemoryStorage implements IDataStorage {
   private storage: Map<string, any> = new Map();
 
   async get<T>(key: string, defaultValue?: T): Promise<T> {

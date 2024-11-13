@@ -1,19 +1,20 @@
-import { DataStorage, MemoryStorage, STORAGE_KEY } from "./data-storage";
+import { IDataStorage, MemoryStorage, STORAGE_KEY } from "./data-storage";
 import { HttpRequestException } from "./exception/http-request.exception";
+import { HTTPAdapter } from "./http-adapter.interface";
 
-export class XtsHttpAdapter {
-  private dataStorage: DataStorage;
+export class XtsHttpAdapter implements HTTPAdapter {
+  private dataStorage: IDataStorage;
 
   constructor() {
     this.dataStorage = new MemoryStorage();
   }
 
-  setStorage(storage: DataStorage) {
+  setStorage(storage: IDataStorage) {
     this.dataStorage = storage;
   }
 
   async post(body: any): Promise<any> {
-    const token = await this.dataStorage.get(STORAGE_KEY.TOKEN, "");
+    const token = await this.dataStorage.get(STORAGE_KEY.XTS_TOKEN, "");
     const deviceId = await this.dataStorage.get(STORAGE_KEY.DEVICEID, "");
     const domain = await this.dataStorage.get(STORAGE_KEY.DOMAIN, "");
 
@@ -37,7 +38,7 @@ export class XtsHttpAdapter {
     body: any,
     headers: Record<string, string>
   ): Promise<any> {
-    const token = await this.dataStorage.get(STORAGE_KEY.TOKEN, "");
+    const token = await this.dataStorage.get(STORAGE_KEY.XTS_TOKEN, "");
     const deviceId = await this.dataStorage.get(STORAGE_KEY.DEVICEID, "");
     const domain = await this.dataStorage.get(STORAGE_KEY.DOMAIN, "");
     return fetch(`${domain}/api/v1/xts`, {
